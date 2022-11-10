@@ -1,0 +1,140 @@
+{
+  "models": [
+    {
+      "id": "id1",
+      "name": "MobA",
+      "bounceForceY": -14,
+      "spinRanges": "Fast",
+      "coreType": "Regular",
+      "bubbles": [
+        [
+          "nope",
+          "armor10",
+          "armor10",
+          "armor10",
+          "nope"
+        ],
+        [
+          "flash",
+          "armor10",
+          "armor10",
+          "armor10",
+          "flash"
+        ],
+        [
+          "flash",
+          "armor10",
+          "core",
+          "armor10",
+          "flash"
+        ],
+        [
+          "flash",
+          "armor10",
+          "armor10",
+          "armor10",
+          "flash"
+        ],
+        [
+          "nope",
+          "armor10",
+          "armor10",
+          "armor10",
+          "nope"
+        ]
+      ]
+    },
+    {
+      "id": "id2",
+      "name": "MobB",
+      "bounceForceY": -14,
+      "spinRanges": "Fast",
+      "coreType": "Regular",
+      "bubbles": [
+        [
+          "nope",
+          "armor01",
+          "armor01",
+          "armor01",
+          "nope",
+          "nope",
+          "nope"
+        ],
+        [
+          "flash",
+          "armor10",
+          "armor10",
+          "armor10",
+          "flash",
+          "flash",
+          "flash"
+        ],
+        [
+          "flash",
+          "armor10",
+          "core",
+          "armor10",
+          "flash",
+          "flash",
+          "flash"
+        ],
+        [
+          "flash",
+          "armor10",
+          "armor10",
+          "armor10",
+          "flash",
+          "flash",
+          "flash"
+        ],
+        [
+          "nope",
+          "armor01",
+          "armor01",
+          "armor01",
+          "nope",
+          "nope",
+          "nope"
+        ],
+        [
+          "nope",
+          "armor01",
+          "armor01",
+          "armor01",
+          "nope",
+          "nope",
+          "nope"
+        ]
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "gid1",
+      "name": "g1",
+      "weights": [
+        {
+          "odds": 0.3,
+          "data": "id1"
+        },
+        {
+          "odds": 0.7,
+          "data": "id2"
+        }
+      ]
+    }
+  ],
+  "waves": [
+    {
+      "id": "wid1",
+      "subWaves": [
+        {
+          "id": "swid1",
+          "groups": [
+            "gid1"
+          ]
+        }
+      ]
+    }
+  ]
+}

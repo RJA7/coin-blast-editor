@@ -8,6 +8,8 @@ export enum ActionType {
   SaveModel = 'SaveModel',
   EditModel = 'EditModel',
   RemoveModel = 'RemoveModel',
+  MoveModelDown = 'MoveModelDown',
+  MoveGroupDown = 'MoveGroupDown',
   PatchGroup = 'PatchGroup',
   AddGroup = 'AddGroup',
   RemoveGroup = 'RemoveGroup',
@@ -17,6 +19,7 @@ export enum ActionType {
   RemoveWave = 'RemoveWave',
   MoveWaveDown = 'MoveWaveDown',
   AddSubWave = 'AddSubWave',
+  MoveSubWaveDown = 'MoveSubWaveDown',
 }
 
 export type Action = {
@@ -58,6 +61,16 @@ export type Action = {
 } | {
   type: ActionType.AddSubWave,
   id: string,
+} | {
+  type: ActionType.MoveModelDown,
+  id: string,
+} | {
+  type: ActionType.MoveGroupDown,
+  id: string,
+} | {
+  type: ActionType.MoveSubWaveDown,
+  subWaveId: string,
+  waveId: string,
 }
 
 export type Dispatch = ReactDispatch<Action>;

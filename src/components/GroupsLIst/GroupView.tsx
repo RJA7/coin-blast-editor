@@ -37,6 +37,9 @@ export const GroupView = React.memo((props: Props) => {
         },
       });
     }}/>
+    <input type="button" value={'Move Down'} onClick={() => {
+      props.dispatch({type: ActionType.MoveGroupDown, id: props.group.id});
+    }}/>
 
     <div style={{display: 'flex', marginTop: 5}}>
       {

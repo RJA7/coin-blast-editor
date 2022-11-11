@@ -149,6 +149,37 @@ export const reducer = (state: State, action: Action): State => {
         waves: state.waves.filter((w) => w.id !== action.id),
       };
 
+    case ActionType.MoveSubWaveDown: {
+      const wave = state.waves.find((w) => w.id === action.waveId);
+
+      if (!wave) {
+        return state;
+      }
+
+      const index = wave.subWaves.findIndex((it) => it.id === action.subWaveId);
+
+      if (index === wave.subWaves.length - 1) {
+        return state;
+      }
+
+      const items = [...wave.subWaves];
+      [items[index], items[index + 1]] = [items[index + 1], items[index]];
+
+      return {
+        ...state,
+        waves: state.waves.map((wave) => {
+          if (wave.id === action.waveId) {
+            return {
+              ...wave,
+              subWaves: items,
+            };
+          }
+
+          return wave;
+        }),
+      };
+    }
+
     case ActionType.MoveWaveDown: {
       const index = state.waves.findIndex((w) => w.id === action.id);
 
@@ -162,6 +193,38 @@ export const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         waves,
+      };
+    }
+
+    case ActionType.MoveGroupDown: {
+      const index = state.groups.findIndex((it) => it.id === action.id);
+
+      if (index === state.groups.length - 1) {
+        return state;
+      }
+
+      const items = [...state.groups];
+      [items[index], items[index + 1]] = [items[index + 1], items[index]];
+
+      return {
+        ...state,
+        groups: items,
+      };
+    }
+
+    case ActionType.MoveModelDown: {
+      const index = state.models.findIndex((it) => it.id === action.id);
+
+      if (index === state.models.length - 1) {
+        return state;
+      }
+
+      const items = [...state.models];
+      [items[index], items[index + 1]] = [items[index + 1], items[index]];
+
+      return {
+        ...state,
+        models: items,
       };
     }
 

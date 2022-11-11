@@ -60,6 +60,9 @@ export const WaveView = React.memo((props: Props) => {
                   },
                 });
               }}/>
+              <input type="button" value={'Move Down'} onClick={() => {
+                props.dispatch({type: ActionType.MoveSubWaveDown, waveId: props.wave.id, subWaveId: subWave.id});
+              }}/>
             </div>
 
             <div style={{display: 'flex', flexWrap: 'wrap'}}>

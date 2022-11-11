@@ -24,6 +24,9 @@ export const ModelViewWithMeta = React.memo((props: Props) => {
           <input type="button" value={'Remove'} onClick={() => {
             props.dispatch({type: ActionType.RemoveModel, id: props.model.id});
           }}/>
+          <input type="button" value={'Move Down'} onClick={() => {
+            props.dispatch({type: ActionType.MoveModelDown, id: props.model.id});
+          }}/>
         </div>
       </div>
       <div

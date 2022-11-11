@@ -13,7 +13,7 @@ export type State = {
   selectedGroupId: string | null;
 };
 
-export const DEFAULT_BALL_FORCE_Y = -14;
+export const DEFAULT_BALL_FORCE_Y = -1.4;
 
 export const initialState: State = {
   models: [],

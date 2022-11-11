@@ -150,7 +150,7 @@ export const EditModel = React.memo((props: Props) => {
               key={`${i}-${j}-${bubbleName}`}
               style={{
                 position: 'absolute',
-                left: `calc(50% - ${(i - extendedCols / 2 + 1) * BUBBLE_OFFSET}px)`,
+                left: `calc(50% + ${(i - extendedCols / 2) * BUBBLE_OFFSET}px)`,
                 top: 300 + (j - extendedRows / 2) * BUBBLE_OFFSET,
               }}
               onMouseDown={(e) => {

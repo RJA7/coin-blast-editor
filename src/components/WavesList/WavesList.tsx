@@ -2,6 +2,7 @@ import { ActionType, Dispatch } from '../../data/actions';
 import { BallModelData, ModelsGroupData, WaveData } from '../../data/export-data-types';
 import { WaveView } from './WaveView';
 import React from 'react';
+import { ImportExport } from '../ImportExport';
 
 type Props = {
   dispatch: Dispatch;
@@ -13,10 +14,14 @@ type Props = {
 
 export const WavesList = (props: Props) => {
   return <div>
-    <div style={{marginBottom: 30}}>
+    <div style={{marginBottom: 30, display: 'flex'}}>
       <input type="button" value={'New Wave'} onClick={() => {
         props.dispatch({type: ActionType.AddWave});
       }}/>
+
+      <div style={{marginLeft: 'auto'}}>
+        <ImportExport/>
+      </div>
     </div>
 
     {

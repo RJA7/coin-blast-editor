@@ -14,7 +14,12 @@ function App() {
 
   return (
     <Context.Provider value={{state, dispatch}}>
-      <div style={{display: 'flex'}}>
+      <div
+        style={{display: 'flex'}}
+        onContextMenu={(e) => {
+          e.preventDefault();
+        }}
+      >
         <div className={'App-Column'}>
           <EditModel model={state.editModel} models={state.models} dispatch={dispatch}/>
         </div>

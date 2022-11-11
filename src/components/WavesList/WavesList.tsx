@@ -32,7 +32,7 @@ export const WavesList = (props: Props) => {
             models={props.models}
             groups={props.groups}
             dispatch={props.dispatch}
-            name={`Wave ${i}`}
+            name={`Wave ${i + 1}`}
             selectedGroupId={props.selectedGroupId}
           />
         </div>;

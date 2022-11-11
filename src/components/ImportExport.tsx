@@ -19,7 +19,16 @@ export const ImportExport = () => {
   const {state, dispatch} = useContext(Context);
 
   return <div>
-    <input type="button" value={'Import'} onClick={() => {
+    <input type="button" value={'Copy'} onClick={() => {
+      const data = JSON.stringify({
+        models: state.models,
+        groups: state.groups,
+        waves: state.waves,
+      } as SaveData);
+
+      clipboard.writeText(data);
+    }}/>
+    <input type="button" value={'Paste'} onClick={() => {
       let data = clipboard.readText();
 
       try {
@@ -37,15 +46,6 @@ export const ImportExport = () => {
           ...data as SaveData,
         },
       });
-    }}/>
-    <input type="button" value={'Export'} onClick={() => {
-      const data = JSON.stringify({
-        models: state.models,
-        groups: state.groups,
-        waves: state.waves,
-      } as SaveData);
-
-      clipboard.writeText(data);
     }}/>
   </div>;
 };

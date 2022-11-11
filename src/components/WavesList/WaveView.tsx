@@ -16,6 +16,9 @@ export const WaveView = React.memo((props: Props) => {
   return <div>
     <div style={{display: 'flex'}}>
       <div style={{marginRight: 10}}>{props.name}</div>
+      <input type="button" value={'Add SW'} onClick={() => {
+        props.dispatch({type: ActionType.AddSubWave, id: props.wave.id});
+      }}/>
       <input type="button" value={'Remove'} onClick={() => {
         props.dispatch({type: ActionType.RemoveWave, id: props.wave.id});
       }}/>
@@ -72,7 +75,7 @@ export const WaveView = React.memo((props: Props) => {
 
                   return <div
                     key={`${group.id}-${groupIndex}`}
-                    style={{display: 'flex', marginTop: 5}}
+                    style={{marginTop: 5, marginRight: 5}}
                     onMouseDown={(e) => {
                       if (e.button === 2) {
                         props.dispatch({
@@ -92,7 +95,9 @@ export const WaveView = React.memo((props: Props) => {
                       }
                     }}
                   >
-                    {group.name}
+                    <div style={{fontSize: 14}}>
+                      {group.name}
+                    </div>
                     {
                       model && <div style={{transform: 'scale(0.8)', transformOrigin: '0 0'}}>
                         <ModelView bubbles={model.bubbles}/>

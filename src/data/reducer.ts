@@ -16,9 +16,9 @@ export type State = {
 export const DEFAULT_BALL_FORCE_Y = -14;
 
 export const initialState: State = {
-  // models: [],
-  // groups: [],
-  ...data as State,
+  models: [],
+  groups: [],
+  waves: [],
   editModel: {
     id: uuid.v4(),
     name: 'Ball Name',
@@ -29,6 +29,7 @@ export const initialState: State = {
   },
   selectedModelId: null,
   selectedGroupId: null,
+  ...data as Partial<State>,
 };
 
 export const reducer = (state: State, action: Action): State => {
@@ -163,6 +164,24 @@ export const reducer = (state: State, action: Action): State => {
         waves,
       };
     }
+
+    case ActionType.AddSubWave:
+      return {
+        ...state,
+        waves: state.waves.map((wave) => {
+          if (wave.id === action.id) {
+            return {
+              ...wave,
+              subWaves: [...wave.subWaves, {
+                id: uuid.v4(),
+                groups: [],
+              }],
+            };
+          }
+
+          return wave;
+        }),
+      };
   }
 
   return state;

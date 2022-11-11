@@ -16,6 +16,7 @@ export enum ActionType {
   PatchWave = 'PatchWave',
   RemoveWave = 'RemoveWave',
   MoveWaveDown = 'MoveWaveDown',
+  AddSubWave = 'AddSubWave',
 }
 
 export type Action = {
@@ -53,6 +54,9 @@ export type Action = {
   id: string,
 } | {
   type: ActionType.MoveWaveDown,
+  id: string,
+} | {
+  type: ActionType.AddSubWave,
   id: string,
 }
 

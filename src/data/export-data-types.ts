@@ -2,6 +2,7 @@ export enum SpinRangeName {
   Round = 'Round',
   Stick = 'Stick',
   Fast = 'Fast',
+  NoSpin = 'NoSpin',
 }
 
 export enum BallCoreType {

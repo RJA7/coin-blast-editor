@@ -3,8 +3,6 @@ import React, { useContext } from 'react';
 import { Context } from '../App';
 import { BallModelData, ModelsGroupData, WaveData } from '../data/export-data-types';
 
-const {clipboard} = window.require('electron');
-
 type SaveData = {
   models: BallModelData[];
   groups: ModelsGroupData[];
@@ -19,17 +17,17 @@ export const ImportExport = () => {
   const {state, dispatch} = useContext(Context);
 
   return <div>
-    <input type="button" value={'Copy'} onClick={() => {
+    <input type="button" value={'Copy'} onClick={async () => {
       const data = JSON.stringify({
         models: state.models,
         groups: state.groups,
         waves: state.waves,
       } as SaveData);
 
-      clipboard.writeText(data);
+      await navigator.clipboard.writeText(data);
     }}/>
-    <input type="button" value={'Paste'} onClick={() => {
-      let data = clipboard.readText();
+    <input type="button" value={'Paste'} onClick={async () => {
+      let data = await navigator.clipboard.readText();
 
       try {
         data = JSON.parse(data);

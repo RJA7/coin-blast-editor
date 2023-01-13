@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/coin-blast-editor/static/css/main.9030937a.css",
-    "main.js": "/coin-blast-editor/static/js/main.c7f4ab91.js",
+    "main.js": "/coin-blast-editor/static/js/main.f8d57c05.js",
     "static/js/787.53dac3ba.chunk.js": "/coin-blast-editor/static/js/787.53dac3ba.chunk.js",
     "index.html": "/coin-blast-editor/index.html",
     "main.9030937a.css.map": "/coin-blast-editor/static/css/main.9030937a.css.map",
-    "main.c7f4ab91.js.map": "/coin-blast-editor/static/js/main.c7f4ab91.js.map",
+    "main.f8d57c05.js.map": "/coin-blast-editor/static/js/main.f8d57c05.js.map",
     "787.53dac3ba.chunk.js.map": "/coin-blast-editor/static/js/787.53dac3ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9030937a.css",
-    "static/js/main.c7f4ab91.js"
+    "static/js/main.f8d57c05.js"
   ]
 }

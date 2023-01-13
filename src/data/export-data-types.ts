@@ -8,6 +8,9 @@ export enum SpinRangeName {
 export enum BallCoreType {
   BobSlop = 'BobSlop',
   BouncyLarry = 'BouncyLarry',
+  ArmoredBouncyLarry = 'ArmoredBouncyLarry',
+  ChargingBouncyLarry = 'ChargingBouncyLarry',
+  LaserBouncyLarry = 'LaserBouncyLarry',
   ArrowDick = 'ArrowDick',
   Regular = 'Regular',
 }
